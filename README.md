@@ -1,5 +1,5 @@
 # jmir
 Test Challenge
 
-#Link
+#Demo Link
 http://simongg.com/jmir/
