@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" ng-app = "testApp">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <meta name="description" content="Simon Gonzalez Test">
+    <meta name="keywords" content=""/>
+    <meta name="author" content="Simon Gonzalez">
+	  <title>Simon Gonzalez</title>
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.png">
+    <!-- Bootstrap core CSS -->
+    <!-- <link href="assets/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<!--     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"> -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Montserrat:400,700">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto+Slab" >   
+
+    <!-- Our Website CSS Styles -->
+    <link rel="stylesheet" href="assets/css/main.css">
+
+
+</head>
+<body>
+
+<!-- Our Website Content Goes Here -->
+<!-- MAIN CONTENT (INJECT CONTENT HERE) -->
+<div ui-view></div>
+
+
+
+<!-- Vendor: Javascripts -->
+<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<!-- Vendor: Angular, followed by our custom Javascripts -->
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js"></script>
+
+
+<!-- Our Website Javascripts -->
+<!-- create the app module first -->
+<script src="app/components/app.js"></script>
+<script src="app/components/app.routes.js"></script>
+<script src="app/components/ui-bootstrap-tpls-0.10.0.min.js"></script>
+<!-- then add controllers -->
+<script src="app/components/home/home-ctrl.js"></script>
+<script src="app/components/work/work-ctrl.js"></script>
+
+
+
+</body>
+</html>

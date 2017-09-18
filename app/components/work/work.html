@@ -1,0 +1,47 @@
+<div ui-view = "header"></div>	
+
+<div ng-controller = "WorkCtrl">
+<br>
+
+        <div class="container">
+            <br/>
+            <div class="row">
+                <div class="col-md-12" ng-show="filteredItems > 0">
+                    <table class="table">
+                    <thead>
+                    <th>Name</th>
+                    <th>Province</th>
+                    <th>Telephone</th>
+                    <th>Postal Code</th>
+                    <th>Salary</th>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="dato in filtered = (list | filter:search | orderBy : predicate :reverse) | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit">
+        				        <td>{{dato.name}}</td>
+        				        <td>{{dato.province}}</td>
+        				        <td>{{dato.telephone}}</td>
+        				        <td>{{dato.postal_code}}</td>
+        				        <td>{{dato.salary}}</td>	
+                        </tr>
+                    </tbody>
+                    </table>
+                </div>
+                <div class="col-md-12" ng-show="filteredItems == 0">
+                    <div class="col-md-12">
+                        <h4>No customers found</h4>
+                    </div>
+                </div>
+                <div class="text-center">
+                <div class="col-md-12" ng-show="filteredItems > 0">    
+                    <div pagination="" page="currentPage" on-select-page="setPage(page)" boundary-links="true" total-items="filteredItems" items-per-page="entryLimit" class="pagination-small" previous-text="&laquo;" next-text="&raquo;"></div>
+                    
+                </div>    
+                </div>
+            </div>
+        </div>
+
+
+	</div> <!-- WorkCtrl -->
+
+<br>
+<div ui-view = "footer"></div>

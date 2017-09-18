@@ -1,0 +1,108 @@
+
+<div ui-view = "header"></div>	
+	<div ng-controller = "HomeCtrl">
+
+
+		<div class="container">
+
+
+				<!-- SHOW ERROR/SUCCESS MESSAGES -->
+				<div id="messages" class="alert alert-info" ng-show="message">
+				  <strong>{{ message }}</strong>
+				</div>				
+				<!-- <div id="messages" class="alert alert-success" ng-show="message">{{ message }}</div> -->
+
+			<div class="well">
+
+				<div id="result" ng-show="showResults">
+
+					<div class="row">
+						<p> Name 		 : {{name}}</p><br>
+						<p> Province 	 : {{province}}</p><br>
+						<p> Telephone 	 : {{telephone}}</p><br>
+						<p> Postal Code  : {{postalcode}}</p><br>
+						<p> Salary 		 : {{salary}}</p><br>
+					</div>
+
+
+				</div>
+
+
+				<!-- FORM -->
+				<form ng-show="showTheForm" ng-submit="processForm()">
+					
+					<!-- NAME -->
+					<div id="name-group" class="form-group" ng-class="{ 'has-error' : errorName }" >
+						<label>Name</label>
+						<input type="text" name="name" class="form-control" placeholder="" ng-model="formData.name" ng-minlength="3" ng-maxlength="20">
+			            <span class="help-block" ng-show="errorName">{{ errorName }}</span>
+            <span  ng-show="formData.name.$error.minlength" class="help-block">Username is too short.</span >
+            <span  ng-show="formData.name.$error.maxlength" class="help-block">Username is too long.</span >			            
+					</div>
+
+					<!-- PROVINCE -->
+					<div id="province-group" name="province" class="form-group" ng-class="{ 'has-error' : errorProvince }">
+					  <label>Province:</label>
+					  <select id="mySelect" class="form-control" ng-model="formData.province">
+					    <option>Ontario</option>
+					    <option>Québec</option>
+					    <option>Nova Scotia</option>
+					    <option>New Brunswick</option>
+					    <option>Manitoba</option>
+					    <option>British Columbia</option>
+					    <option>Prince Edward Island</option>
+					    <option>Saskatchewan</option>
+					    <option>Alberta</option>
+					    <option>Newfoundland and Labrador</option>
+					    <option>Northwest Territories</option>
+					    <option>Yukon</option>
+					    <option>Nunavut</option>
+					  </select>
+					  <span class="help-block" ng-show="errorProvince">{{ errorProvince }}</span>
+					</div>
+
+					<!-- TELEPHONE & POSTALCODE -->
+					<div class="row">
+						<div class="col-sm-6">
+							<div id="telephone-group" class="form-group" ng-class="{ 'has-error' : errorTelephone }">
+								<label>Telephone</label>
+								<input type="text" name="telephone" class="form-control" placeholder="" ng-model="formData.telephone">
+					            <span class="help-block" ng-show="errorTelephone">{{ errorTelephone }}</span>
+							</div>
+						</div>
+						<div class="col-sm-6">	
+							<div id="postalcode-group" class="form-group" ng-class="{ 'has-error' : errorPostalcode }">
+								<label>Postal Code</label>
+								<input type="text" name="postalcode" class="form-control" placeholder="" ng-model="formData.postalcode">
+					            <span class="help-block" ng-show="errorPostalcode">{{ errorPostalcode }}</span>
+							</div>						
+						</div>
+						<br>
+					</div>
+
+
+					<!-- SALARY -->
+					<div id="salary-group" class="form-group" ng-class="{ 'has-error' : errorSalary }">
+						<label>Salary</label>
+						<input type="text" name="salary" class="form-control" placeholder="" ng-model="formData.salary">
+						<span class="help-block" ng-show="errorSalary">{{ errorSalary }}</span>
+						<br>
+						<!-- SUBMIT BUTTON -->
+						<button type="submit" class="btn btn-primary pull-right">
+						SAVE</button>
+						<br>
+					</div>
+					
+
+				</form>
+
+
+			</div>
+
+
+
+        </div> <!-- CONTAINER -->
+
+	</div> <!-- CONTROLLER -->
+<br>
+<div ui-view = "footer"></div>
